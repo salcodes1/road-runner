@@ -7,6 +7,7 @@ import com.acmerobotics.roadrunner.trajectory.config.TrajectoryConfigManager
 import com.acmerobotics.roadrunner.trajectory.config.TrajectoryGroupConfig
 import java.awt.Component
 import java.awt.Dimension
+import java.awt.ScrollPane
 import java.io.File
 import javax.swing.*
 
@@ -150,7 +151,10 @@ class TrajectoryListPanel : JPanel() {
 
         add(addButton)
 
-        add(trajList)
+        val trajScrollPane = JScrollPane(trajList)
+        trajScrollPane.preferredSize = Dimension(200, 200)
+
+        add(trajScrollPane)
     }
 
     fun setGroupDir(dir: File): Boolean {
